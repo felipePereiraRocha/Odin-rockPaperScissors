@@ -1,7 +1,7 @@
 function playRound(){
     //computer choice section//
     function getComputerChoice(){
-        let options = ["ROCK", "PAPER", "SCISSORS"]
+        let options = ["ROCK", "PAPER", "SCISSORS"];
         let choice = Math.floor(Math.random() * 3);
         let pcChoiceFunction = options[choice];
         return pcChoiceFunction;
@@ -11,7 +11,9 @@ function playRound(){
     var playerSelection = prompt("");
     var playerSelection = playerSelection.toUpperCase();
     //THE GAME (you lost)//
-    if (playerSelection == computerSelection){
+    if (playerSelection != "ROCK" && playerSelection != "PAPER" && playerSelection != "SCISSORS"){
+        console.log("You can't perform that move use (Rock, Paper or Scissors)");
+    } else if (playerSelection == computerSelection){
         console.log("It's a tie!");
     } else if (playerSelection == "SCISSORS", computerSelection == "PAPER"){
         console.log("You WIN Scissors beats Paper");
